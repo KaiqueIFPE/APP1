@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paciente</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div> <b> Cpf: </b> <%= resultado.cpf %> </div>
+        <div> <b> Nome: </b> <%= resultado.nome %> </div>
+        <div> <b> Idade: </b> <%= resultado.idade %> </div>
+
+    </div>
+    
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+</html>

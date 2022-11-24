@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Médico</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 style="font-size:45px; text-align:center;" >Cadastrar</h1>
+
+        <% if (erro) {%>
+
+            <div style="background-color: lightgray; color: red"> E-mail já cadastrado</div>
+
+        <%}%>
+ 
+        <form action= "/umedico" method="post">
+
+           <input type="hidden" name="id" value="<%= umedico.email %>">
+
+           <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" value="<%= umedico.nome %>" required class="form-control" name="nome">
+        </div>
+
+            <div <%= escondido %> class="mb-3">
+                <label class="form-label">E-mail</label>
+                <input required type="email" value="<%=umedico.email %>" class="form-control" name="email">
+            </div>
+             
+            <div  class="mb-3">
+                <label class="form-label">Senha</label>
+                <input  required type="password" class="form-control" name="senha">
+            </div>
+
+            <button type="submit" class="btn btn-dark" >Salvar</button>
+            
+        </form>
+
+    </div>
+
+</body>
+
+
+
+
+</html>

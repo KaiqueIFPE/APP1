@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+    
+    <div class="container">
+    
+
+        <% if (salvo != undefined){ %>
+            <div style="text-align:center; background-color:green; color:white">
+                Médico cadastrado com sucesso!
+            </div>
+        <%}%>
+
+        <% if (removido != undefined){ %>
+            <div style="text-align:center; background-color:brown; color:white">
+               Médico removido com sucesso!
+            </div>
+        <%}%>
+
+        <table class="table">
+            
+            <h1 style="font-size:45px;text-align:center;">Relatório de Médicos</h1>
+            <a class="btn btn-dark" href="/umedico/cadastrar"> Cadastrar</a>
+
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Detalhes</th>
+                <th>Atualizar</th>
+                <th>Remover</th>
+            </tr>
+
+            <% for(let umedico of listaUmedico) {  %>
+                <tr>
+                    <td>
+                        <%= umedico.nome%>
+                    </td>
+                    <td>
+                        <%= umedico.email%>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="/umedico/<%= umedico.email %>"> Detalhes</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-dark" href="/umedico/cadastrar/<%= umedico.email %>"> Atualizar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" onclick="return confirm('Confirmar remoção?')" href="/umedico/remover/<%= umedico.email %>"> Remover</a>
+                    </td>
+                </tr>
+
+            <% } %>
+
+        </table>
+
+        <div>
+            <a class="btn btn-dark" href="/" >Voltar</a>
+        </div>
+
+    </div>
+
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+
+</html>

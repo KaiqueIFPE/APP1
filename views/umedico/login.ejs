@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 style="font-size:45px; text-align:center;" >Login</h1>
+
+        <% if (erro) {%>
+
+            <div style="background-color: lightgray; color: red"> E-mail e/ou senha incorreto(s)</div>
+
+        <%}%>
+ 
+        <form action= "/umedico/login" method="post">
+        
+           
+
+            <div class="mb-3">
+                <label class="form-label">E-mail</label>
+                <input required type="email" class="form-control" name="email">
+            </div>
+             
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input required type="password" class="form-control" name="senha">
+            </div>
+
+            <button type="submit" class="btn btn-dark" >Enviar</button>
+            <a class="btn btn-dark" href="/umedico/cadastrar">Cadastrar</a>
+            
+            
+        </form>
+
+    </div>
+
+</body>
+
+<foot>
+    
+</foot>
+
+
+</html>

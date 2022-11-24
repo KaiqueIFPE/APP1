@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar</title>
+    <%- include("../partials/header.ejs") %>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body>
+    
+    <div class="container">
+    
+
+        <table class="table">
+            
+            <h1 style="font-size:30px;text-align:center;">Relatório de Médicos</h1>
+
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+            </tr>
+
+            <% for(let umedico of listaUmedico) {  %>
+                <tr>
+                    <td>
+                        <%= umedico.nome%>
+                    </td>
+                    <td>
+                        <%= umedico.email%>
+                    </td>
+                </tr>
+
+            <% } %>
+
+         
+        </table>
+
+        <a class="btn btn-dark" href="/">Voltar</a>
+    </div>
+
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+
+</html>
